@@ -10,7 +10,7 @@ SECRET_KEY = '$9qjq3$sr73rn&*l5-lal@2#l9-g-5d$75gwv+yox1*z)1u_4x'
 #SECRET_KEY = '$9qjq3$sr73rn&*l5-lal@2#l9-g-5d$75gwv+yox1*z)1u_4x'
 
 
-DEBUG =     False
+DEBUG =     True
 
 ALLOWED_HOSTS = ['*']
 #ALLOWED_HOSTS = []
@@ -143,6 +143,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 

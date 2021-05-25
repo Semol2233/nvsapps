@@ -2,6 +2,7 @@ from django.urls import path,include
 from rest_framework.urlpatterns import format_suffix_patterns
 from Data_app import views
 from .views import *
+from django.conf import settings
 from django.conf.urls.static import static
 from django.conf import settings
 from rest_auth.registration.views import (
@@ -12,10 +13,6 @@ from rest_auth.registration.views import (
 urlpatterns = [
     path('', channelpost.as_view()),
     path('d/<channel_slug>', ServiceDetailAPIView.as_view())
-
-
-
-
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

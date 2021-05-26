@@ -19,3 +19,20 @@
 #                 raise forms.ValidationError('Wrong User!')
 #         return super(UserLoginForm,self).clean(*args, **kwargs)
        
+
+
+from django import forms
+from django.contrib.auth.models import User
+from .models import *
+
+
+
+class daildddyscosst(forms.ModelForm):
+    class Meta:
+        model = post_models
+        fields = ['channel_name','channel_slug','catgory','straming_url','channel_logo']
+        widgets = {
+            'channel_name':forms.TextInput(attrs={'class':'form-control','placeholder':'20tk....'}),
+
+        }
+

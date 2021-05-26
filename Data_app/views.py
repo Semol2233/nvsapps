@@ -30,6 +30,7 @@ from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 #end
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # DJango built in login 
 from django.shortcuts import render,redirect
@@ -38,20 +39,31 @@ from django.contrib.auth import authenticate,get_user_model,login,logout
 # end
 from rest_framework.settings import api_settings
 #social Auth 
-from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
-from rest_auth.registration.views import SocialLoginView
-# end
 
 #user filter
 from django.contrib.auth import get_user_model
 User = get_user_model()
 #end
+from django.views.generic import TemplateView,CreateView,ListView,DeleteView,DetailView,UpdateView
 
 
-
-
+from django import forms
 #list view -> APi
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
+from .forms import *
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def generate_jwt():
@@ -67,14 +79,14 @@ class Tag_ddviewr(pagination.PageNumberPagination):
     page_size_query_param = 'page_size'
     max_page_size = 100
 
-
+#mixpage_cahnnel player niche
 class mixchannel(generics.ListAPIView):
     queryset               = post_models.objects.all().order_by('?')[:6]
     serializer_class       = mixchannel
     
 
 
-   
+#dtls page
 class ServiceDetailAPIView(generics.RetrieveAPIView):
     queryset = post_models.objects.all()
     serializer_class = ClassItemSerializer
@@ -82,7 +94,7 @@ class ServiceDetailAPIView(generics.RetrieveAPIView):
 
 
 
-
+#homepageapi
 class channelpost(APIView, PaginationHandlerMixin):
     pagination_class = Tag_ddviewr
 
@@ -110,7 +122,7 @@ class Tag_dsdviewr(pagination.PageNumberPagination):
     page_size_query_param = 'page_size'
     max_page_size = 100
 
-
+#payerpage
 class playerpagecatgory(APIView, PaginationHandlerMixin):
     pagination_class = Tag_dsdviewr
 
@@ -129,4 +141,16 @@ class playerpagecatgory(APIView, PaginationHandlerMixin):
             paginated_response = self.get_paginated_response(response)
             return JsonResponse(paginated_response.data, safe=False)
         return HttpResponse('No matching data found', status=404)
+
+
+
+
+
+
+
+class postchannel(CreateView):
+    form_class = daildddyscosst
+    model = post_models
+    template_name = 'uplode_us.html'
+
 

@@ -33,16 +33,12 @@ INSTALLED_APPS = [
     'account_admin_app',
     'django.contrib.sites',
     'allauth',
-    'allauth.account',
-    'rest_auth.registration',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
+    'crispy_forms',
 
 ]
-SITE_ID = 1
 
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+
 #w
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

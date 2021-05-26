@@ -5,9 +5,7 @@ from .views import *
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf import settings
-from rest_auth.registration.views import (
-    SocialAccountListView, SocialAccountDisconnectView
-)
+
 
 
 urlpatterns = [
@@ -15,11 +13,10 @@ urlpatterns = [
     path('plyerpage/<category>', playerpagecatgory.as_view()),
 
     path('d/<channel_slug>', ServiceDetailAPIView.as_view()),
-    path('mix', mixchannel.as_view())
-
-
+    path('mix', mixchannel.as_view()),
 
     
+    path('datachannel', postchannel.as_view(),name='fhdf')    
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

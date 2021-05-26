@@ -51,3 +51,18 @@ class ClassItemSerializer(serializers.HyperlinkedModelSerializer):
             'channel_logo',
             'release_date'
           ]
+
+
+
+class mixchannel(serializers.HyperlinkedModelSerializer):
+     class Meta:
+        model = post_models
+        fields = [
+            'id',
+            'channel_name',
+            'channel_slug',
+            'straming_url',
+            'channel_logo',
+            'release_date'
+          
+        ]

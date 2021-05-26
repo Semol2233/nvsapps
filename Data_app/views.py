@@ -63,16 +63,14 @@ jwt_token = generate_jwt()
 
     
 class Tag_ddviewr(pagination.PageNumberPagination):
-    page_size = 12
+    page_size = 6
     page_size_query_param = 'page_size'
     max_page_size = 100
 
 
-class channelpost(generics.ListAPIView):
-    queryset               = post_models.objects.all()
-    serializer_class       = channelpost
-    filter_backends        = [filters.SearchFilter]
-    pagination_class       = Tag_ddviewr
+class mixchannel(generics.ListAPIView):
+    queryset               = post_models.objects.all().order_by('?')[:6]
+    serializer_class       = mixchannel
     
 
 
@@ -81,3 +79,54 @@ class ServiceDetailAPIView(generics.RetrieveAPIView):
     queryset = post_models.objects.all()
     serializer_class = ClassItemSerializer
     lookup_field = ('channel_slug')
+
+
+
+
+class channelpost(APIView, PaginationHandlerMixin):
+    pagination_class = Tag_ddviewr
+
+    def get(self, request, category, *args, **kwargs):
+        authors = catgory_list.objects.filter(cat_slug=category).values('cat_name','cat_slug')
+        if authors:
+            posts = post_models.objects.filter(catgory__cat_slug=category).values('id','channel_name','channel_slug','straming_url','channel_logo','release_date').order_by('-id')
+
+            for author in list(authors):
+                response = {
+                'cat_name': author['cat_name']
+
+                }
+            page = self.paginate_queryset(list(posts))
+            response['List'] = page
+            paginated_response = self.get_paginated_response(response)
+            return JsonResponse(paginated_response.data, safe=False)
+        return HttpResponse('No matching data found', status=404)
+
+
+
+    
+class Tag_dsdviewr(pagination.PageNumberPagination):
+    page_size = 8
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+
+
+class playerpagecatgory(APIView, PaginationHandlerMixin):
+    pagination_class = Tag_dsdviewr
+
+    def get(self, request, category, *args, **kwargs):
+        authors = catgory_list.objects.filter(cat_slug=category).values('cat_name','cat_slug')
+        if authors:
+            posts = post_models.objects.filter(catgory__cat_slug=category).values('id','channel_name','channel_slug','straming_url','channel_logo','release_date').order_by('-id')
+
+            for author in list(authors):
+                response = {
+                'cat_name': author['cat_name']
+
+                }
+            page = self.paginate_queryset(list(posts))
+            response['List'] = page
+            paginated_response = self.get_paginated_response(response)
+            return JsonResponse(paginated_response.data, safe=False)
+        return HttpResponse('No matching data found', status=404)
+

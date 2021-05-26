@@ -13,6 +13,7 @@ from django.utils import timezone
 class catgory_list(models.Model):
     cat_name           = models.CharField(max_length=255)
     release_date       = models.DateField(auto_now_add = True)
+    cat_slug           =   models.SlugField(max_length=200)
 
     def __str__(self):
         return self.cat_name   
@@ -32,3 +33,6 @@ class post_models(models.Model):
 
 
 
+class coverimgapi(models.Model):
+    release_date   = models.DateField(auto_now_add = True)
+    channel_logo   = models.ImageField(upload_to="coverimg" ,blank=True)

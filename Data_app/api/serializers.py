@@ -70,17 +70,12 @@ class mixchannel(serializers.HyperlinkedModelSerializer):
 
 
 
-class mixchannel(serializers.HyperlinkedModelSerializer):
+class coverapiomg(serializers.HyperlinkedModelSerializer):
      class Meta:
-        model = post_models
+        model = coverimgapi
         fields = [
-            'id',
-            'channel_name',
-            'channel_slug',
-            'straming_url',
             'channel_logo',
-            'release_date'
-          
+            
         ]
 
 

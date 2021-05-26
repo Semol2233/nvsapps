@@ -156,7 +156,7 @@ class postchannel(CreateView,LoginRequiredMixin):
 
 
 
-class mixchannel(generics.ListAPIView):
+class coverapi(generics.ListAPIView):
     queryset               = coverimgapi.objects.all()[:2]
     serializer_class       = coverapiomg
     

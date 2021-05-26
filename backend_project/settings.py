@@ -153,4 +153,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 USE_L10N = False
 USE_TZ = False #
 
-# from auth_global.main import *
+from auth_global.main import *

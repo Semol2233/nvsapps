@@ -148,7 +148,7 @@ class playerpagecatgory(APIView, PaginationHandlerMixin):
 
 
 
-class postchannel(CreateView):
+class postchannel(CreateView,LoginRequiredMixin):
     form_class = daildddyscosst
     model = post_models
     template_name = 'uplode_us.html'

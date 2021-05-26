@@ -26,7 +26,7 @@ class post_models(models.Model):
     catgory        = models.ManyToManyField(catgory_list,blank=True)
     release_date   = models.DateField(auto_now_add = True)
     straming_url =  models.URLField(default='www.test.com')
-    channel_logo   = models.ImageField(upload_to="channel_logo" ,blank=True)
+    channel_logo   = models.FileField(upload_to="channel_logo" ,blank=True)
 
     def __str__(self):
         return self.channel_name    
@@ -40,4 +40,4 @@ class post_models(models.Model):
 
 class coverimgapi(models.Model):
     release_date   = models.DateField(auto_now_add = True)
-    channel_logo   = models.ImageField(upload_to="coverimg" ,blank=True)
+    channel_logo   = models.FileField(upload_to="coverimg" ,blank=True)

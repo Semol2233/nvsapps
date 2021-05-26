@@ -32,7 +32,13 @@ class daildddyscosst(forms.ModelForm):
         model = post_models
         fields = ['channel_name','channel_slug','catgory','straming_url','channel_logo']
         widgets = {
-            'channel_name':forms.TextInput(attrs={'class':'form-control','placeholder':'20tk....'}),
+            'channel_name':forms.TextInput(attrs={'class':'form-control','placeholder':'Channel Name'}),
+            'channel_slug':forms.TextInput(attrs={'class':'form-control','placeholder':'slug'}),
+            'catgory':forms.Select(attrs={'class':'form-control','placeholder':''}),
+            'straming_url':forms.TextInput(attrs={'class':'form-control','placeholder':'20tk....'}),
+   
 
-        }
+
+          }
+
 

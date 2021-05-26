@@ -12,6 +12,7 @@ SECRET_KEY = '$9qjq3$sr73rn&*l5-lal@2#l9-g-5d$75gwv+yox1*z)1u_4x'
 
 DEBUG =     True
 SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ALLOWED_HOSTS = ['*']
 #ALLOWED_HOSTS = []
 #f
@@ -152,4 +153,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 USE_L10N = False
 USE_TZ = False #
 
-from auth_global.main import *
+# from auth_global.main import *

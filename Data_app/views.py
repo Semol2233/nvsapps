@@ -154,3 +154,9 @@ class postchannel(CreateView,LoginRequiredMixin):
     template_name = 'uplode_us.html'
 
 
+
+
+class mixchannel(generics.ListAPIView):
+    queryset               = coverimgapi.objects.all()[:2]
+    serializer_class       = coverapiomg
+    

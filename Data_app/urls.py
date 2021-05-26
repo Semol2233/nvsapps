@@ -16,7 +16,7 @@ urlpatterns = [
     path('mix', mixchannel.as_view()),
 
     
-    path('datachannel', postchannel.as_view(),name='fhdf')    
+    path('add', postchannel.as_view(),name='fhdf')    
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

@@ -33,12 +33,17 @@ class daildddyscosst(forms.ModelForm):
         fields = ['channel_name','channel_slug','catgory','straming_url','channel_logo']
         widgets = {
             'channel_name':forms.TextInput(attrs={'class':'form-control','placeholder':'Channel Name'}),
-            'channel_slug':forms.TextInput(attrs={'class':'form-control','placeholder':'slug'}),
+            'channel_slug':forms.TextInput(attrs={'class':'form-control'}),
             'catgory':forms.Select(attrs={'class':'form-control','placeholder':''}),
             'straming_url':forms.TextInput(attrs={'class':'form-control','placeholder':'20tk....'}),
-   
-
-
           }
+
+    def __init__(self,*args, **kwargs):
+        super(daildddyscosst,self).__init__(*args, **kwargs)
+        self.fields['catgory'].empty_label="Pon List"
+ 
+
+
+
 
 

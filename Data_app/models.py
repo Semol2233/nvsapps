@@ -1,4 +1,5 @@
 from django.db.models.base import Model
+from django.db.models.deletion import CASCADE
 from django.db.models.signals import post_save
 from django.conf import settings
 from django.db import models
@@ -23,7 +24,7 @@ class catgory_list(models.Model):
 class post_models(models.Model):
     channel_name   = models.CharField(max_length=255)
     channel_slug =   models.SlugField(max_length=200)
-    catgory        = models.ManyToManyField(catgory_list,blank=True)
+    catgory        = models.ForeignKey(catgory_list,blank=True,on_delete=CASCADE)
     release_date   = models.DateField(auto_now_add = True)
     straming_url =  models.URLField(default='www.test.com')
     channel_logo   = models.FileField(upload_to="channel_logo" ,blank=True)

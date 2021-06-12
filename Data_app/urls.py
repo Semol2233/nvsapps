@@ -16,7 +16,7 @@ urlpatterns = [
     path('add', postchannel.as_view(),name='fhdf'), 
     path('cover', coverapi.as_view(),name='ee'),
     path('ad', nbox_adview.as_view(),name='ad'),
-    path('msg', msgseri.as_view(),name='ad')
+    path('msg', msgviewmodel.as_view(),name='awd')
 
 
 

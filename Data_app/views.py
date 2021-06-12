@@ -166,3 +166,12 @@ class nbox_adview(generics.ListAPIView):
     queryset               = nbox_ad.objects.all()[:1]
     serializer_class       = nbox_adapi
     
+
+
+
+
+
+class msgviewmodel(generics.ListAPIView):
+    queryset               = msgview.objects.all()[:1]
+    serializer_class       = msgseri
+   

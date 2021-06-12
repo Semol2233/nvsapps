@@ -15,7 +15,9 @@ urlpatterns = [
     path('mix', mixchannel.as_view()),
     path('add', postchannel.as_view(),name='fhdf'), 
     path('cover', coverapi.as_view(),name='ee'),
-    path('ad', nbox_adview.as_view(),name='ad')  
+    path('ad', nbox_adview.as_view(),name='ad'),
+    path('msg', msgseri.as_view(),name='ad')
+
 
 
       

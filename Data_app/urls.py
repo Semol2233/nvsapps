@@ -11,13 +11,14 @@ from django.conf import settings
 urlpatterns = [
     path('homepage/<category>', channelpost.as_view()),
     path('plyerpage/<category>', playerpagecatgory.as_view()),
-
     path('d/<channel_slug>', ServiceDetailAPIView.as_view()),
     path('mix', mixchannel.as_view()),
-
-    
     path('add', postchannel.as_view(),name='fhdf'), 
-    path('cover', coverapi.as_view(),name='ee')    
+    path('cover', coverapi.as_view(),name='ee'),
+    path('ad', nbox_adview.as_view(),name='ad')  
+
+
+      
 
 ]
 

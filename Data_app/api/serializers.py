@@ -79,4 +79,16 @@ class coverapiomg(serializers.HyperlinkedModelSerializer):
         ]
 
 
+
+
+class nbox_adapi(serializers.HyperlinkedModelSerializer):
+     class Meta:
+        model = coverimgapi
+        fields = [
+            'channel_logo',
+            
+        ]
+
+        
+
         

@@ -42,3 +42,11 @@ class post_models(models.Model):
 class coverimgapi(models.Model):
     release_date   = models.DateField(auto_now_add = True)
     channel_logo   = models.FileField(upload_to="coverimg" ,blank=True)
+
+
+
+
+class nbox_ad(models.Model):
+    release_date   = models.DateField(auto_now_add = True)
+    status = models.BooleanField(default=False)
+    ad_img   = models.FileField(upload_to="coverimg" ,blank=True)

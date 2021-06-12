@@ -160,3 +160,9 @@ class coverapi(generics.ListAPIView):
     queryset               = coverimgapi.objects.all()[:2]
     serializer_class       = coverapiomg
     
+
+
+class nbox_adview(generics.ListAPIView):
+    queryset               = nbox_ad.objects.all()[:1]
+    serializer_class       = nbox_adapi
+    

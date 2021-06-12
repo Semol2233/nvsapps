@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Data_app',
     'rest_framework',
+    'django_ping_me',
     'rest_framework.authtoken',
     'rest_auth',
     'corsheaders',

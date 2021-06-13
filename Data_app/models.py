@@ -65,4 +65,5 @@ class msgview(models.Model):
 class appsupdate(models.Model):
   videourl =   models.URLField(max_length=300)
   msg = models.TextField(blank=True)
+  updatelinkbutton = models.URLField(max_length=300)
 

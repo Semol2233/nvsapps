@@ -112,7 +112,8 @@ class appsupdateseri(serializers.HyperlinkedModelSerializer):
         model = appsupdate
         fields = [
             'videourl',
-            'msg'
+            'msg',
+            'updatelinkbutton'
 
             
         ]

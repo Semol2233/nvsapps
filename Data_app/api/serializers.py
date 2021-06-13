@@ -53,12 +53,20 @@ class ClassItemSerializer(serializers.HyperlinkedModelSerializer):
           ]
 
 
+class catgory_lisst(serializers.HyperlinkedModelSerializer):
+     class Meta:
+        model = catgory_list
+        fields = [
+            'cat_name',
+            'cat_slug' 
+        ]
 
 class mixchannel(serializers.HyperlinkedModelSerializer):
+     catgory   = catgory_lisst(read_only=True)
      class Meta:
         model = post_models
         fields = [
-            'id',
+            'catgory',
             'channel_name',
             'channel_slug',
             'straming_url',
@@ -116,14 +124,7 @@ class appsupdateseri(serializers.HyperlinkedModelSerializer):
 
         
     
-class catgory_lisst(serializers.HyperlinkedModelSerializer):
-     class Meta:
-        model = catgory_list
-        fields = [
-            'cat_name',
-            'release_date',
-            'cat_slug' 
-        ]
+
 
 class DRFPostSerializer(serializers.HyperlinkedModelSerializer):
      catgory   = catgory_lisst(read_only=True)

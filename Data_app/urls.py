@@ -18,7 +18,10 @@ urlpatterns = [
     path('ad', nbox_adview.as_view(),name='ad'),
     path('msg', msgviewmodel.as_view(),name='awd'),
     path('up', appsupdatmodel.as_view(),name='update'),
-    path('ch', API_objects.as_view(),name='ch')
+
+    path('home', playerpagedata.as_view(),name='ch'),
+    path('dtls', homepagedata.as_view(),name='ch')
+
 
 
 

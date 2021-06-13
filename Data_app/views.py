@@ -190,11 +190,31 @@ class appsupdatmodel(generics.ListAPIView):
    
 
 
+class channel_Data(pagination.PageNumberPagination):
+    page_size = 9
+    page_size_query_param = 'page_size'
+    max_page_size = 100
 
-class API_objects(generics.ListAPIView):
+
+class playerpagedata(generics.ListAPIView):
     queryset = post_models.objects.all().order_by('?')
     serializer_class       = DRFPostSerializer
     filter_backends        = [filters.SearchFilter]
     search_fields          = ['catgory__cat_slug']
+    pagination_class       = channel_Data
 
-    
+
+class channels_Data(pagination.PageNumberPagination):
+    page_size = 5
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+
+
+class homepagedata(generics.ListAPIView):
+    queryset = post_models.objects.all().order_by('?')
+    serializer_class       = DRFPostSerializer
+    filter_backends        = [filters.SearchFilter]
+    search_fields          = ['catgory__cat_slug']
+    pagination_class       = channels_Data
+
+

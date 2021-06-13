@@ -60,3 +60,9 @@ class msgview(models.Model):
 
     def __str__(self):
         return self.msg    
+
+
+class appsupdate(models.Model):
+  videourl =   models.URLField(max_length=300)
+  msg = models.TextField(blank=True)
+

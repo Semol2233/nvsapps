@@ -175,3 +175,17 @@ class msgviewmodel(generics.ListAPIView):
     queryset               = msgview.objects.all()[:1]
     serializer_class       = msgseri
    
+
+
+class msgviewmodel(generics.ListAPIView):
+    queryset               = msgview.objects.all()[:1]
+    serializer_class       = msgseri
+   
+
+
+
+class appsupdatmodel(generics.ListAPIView):
+    queryset               = appsupdate.objects.all()[:1]
+    serializer_class       = appsupdateseri
+  
+   

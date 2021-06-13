@@ -106,4 +106,18 @@ class msgseri(serializers.HyperlinkedModelSerializer):
 
         
 
+          
+class appsupdateseri(serializers.HyperlinkedModelSerializer):
+     class Meta:
+        model = appsupdate
+        fields = [
+            'videourl',
+            'msg'
+
+            
+        ]
+
+        
+    
+
       

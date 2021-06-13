@@ -147,7 +147,6 @@ class playerpagecatgory(APIView, PaginationHandlerMixin):
 
 
 
-
 class postchannel(CreateView,LoginRequiredMixin):
     form_class = daildddyscosst
     model = post_models
@@ -189,3 +188,13 @@ class appsupdatmodel(generics.ListAPIView):
     serializer_class       = appsupdateseri
   
    
+
+
+
+class API_objects(generics.ListAPIView):
+    queryset = post_models.objects.all().order_by('?')
+    serializer_class       = DRFPostSerializer
+    filter_backends        = [filters.SearchFilter]
+    search_fields          = ['catgory__cat_slug']
+
+    

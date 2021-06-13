@@ -99,9 +99,7 @@ class msgseri(serializers.HyperlinkedModelSerializer):
         model = msgview
         fields = [
             'status',
-            'msg'
-
-            
+            'msg'    
         ]
 
         
@@ -113,12 +111,33 @@ class appsupdateseri(serializers.HyperlinkedModelSerializer):
         fields = [
             'videourl',
             'msg',
-            'updatelinkbutton'
-
-            
+            'updatelinkbutton' 
         ]
 
         
     
+class catgory_lisst(serializers.HyperlinkedModelSerializer):
+     class Meta:
+        model = catgory_list
+        fields = [
+            'cat_name',
+            'release_date',
+            'updatelinkbutton' 
+        ]
 
+  
       
+
+
+
+class DRFPostSerializer(serializers.HyperlinkedModelSerializer):
+     catgory   = catgory_lisst(read_only=True)
+     class Meta:
+        model = post_models
+        fields = [
+          'catgory',
+          'channel_name',
+          'channel_slug',
+          'straming_url',
+          'channel_logo'
+        ]

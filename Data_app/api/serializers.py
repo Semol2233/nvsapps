@@ -122,13 +122,8 @@ class catgory_lisst(serializers.HyperlinkedModelSerializer):
         fields = [
             'cat_name',
             'release_date',
-            'updatelinkbutton' 
+            'cat_slug' 
         ]
-
-  
-      
-
-
 
 class DRFPostSerializer(serializers.HyperlinkedModelSerializer):
      catgory   = catgory_lisst(read_only=True)

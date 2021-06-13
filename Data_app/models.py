@@ -55,7 +55,7 @@ class nbox_ad(models.Model):
 class msgview(models.Model):
     release_date   = models.DateField(auto_now_add = True)
     status = models.BooleanField(default=False)
-    msg = models.CharField(max_length=500)
+    msg = models.TextField(blank=True)
    
 
     def __str__(self):

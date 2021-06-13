@@ -1,12 +1,16 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import catgory_list,post_models,coverimgapi,msgview,nbox_ad
+from .models import catgory_list,post_models,coverimgapi,msgview,nbox_ad,appsupdate
 admin.site.register(catgory_list)
 admin.site.register(post_models)
 admin.site.register(coverimgapi)
 admin.site.register(nbox_ad)
 admin.site.register(msgview)
+admin.site.register(appsupdate)
+
+
+
 
 
 

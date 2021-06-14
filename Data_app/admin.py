@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+admin.site.site_header = "NBOX"
 # Register your models here.
 from .models import catgory_list,post_models,coverimgapi,msgview,nbox_ad,appsupdate
 admin.site.register(catgory_list)

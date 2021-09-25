@@ -220,7 +220,7 @@ class homepagedata(generics.ListAPIView):
 
 class feturedapi(generics.ListAPIView):
     queryset = feturedchannel.objects.all()
-    serializer_class       = feturedchnnael
+    serializer_class       = fetapitwo
 
 
 

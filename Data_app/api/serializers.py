@@ -141,7 +141,7 @@ class DRFPostSerializer(serializers.HyperlinkedModelSerializer):
 
 
 
-class DRFPostSserializer(serializers.HyperlinkedModelSerializer):
+class fetapi(serializers.HyperlinkedModelSerializer):
      class Meta:
         model = post_models
         fields = [
@@ -156,8 +156,8 @@ class DRFPostSserializer(serializers.HyperlinkedModelSerializer):
 
 
 
-class feturedchnnael(serializers.HyperlinkedModelSerializer):
-     channelfetured   = DRFPostSserializer(read_only=True)
+class fetapitwo(serializers.HyperlinkedModelSerializer):
+     channelfetured   = fetapi(read_only=True)
      class Meta:
         model = feturedchannel
         fields = [

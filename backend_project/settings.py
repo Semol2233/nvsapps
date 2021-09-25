@@ -10,7 +10,7 @@ SECRET_KEY = '$9qjq3$sr73rn&*l5-lal@2#l9-g-5d$75gwv+yox1*z)1u_4x'
 #SECRET_KEY = '$9qjq3$sr73rn&*l5-lal@2#l9-g-5d$75gwv+yox1*z)1u_4x'
 
 
-DEBUG =     False
+DEBUG =     True
 SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ALLOWED_HOSTS = ['*']

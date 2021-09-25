@@ -70,8 +70,9 @@ class appsupdate(models.Model):
 
 
 class feturedchannel(models.Model):
+    chadnnel_name   = models.CharField(max_length=255)
     Date =  models.DateField(auto_now_add = True)
     channelfetured = models.ManyToManyField('post_models')
 
     def __str__(self):
-        return self.id 
+        return self.chadnnel_name 

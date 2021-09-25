@@ -161,7 +161,6 @@ class fetapitwo(serializers.HyperlinkedModelSerializer):
      class Meta:
         model = feturedchannel
         fields = [
-            'chadnnel_name',
             'channelfetured',
           
         ]

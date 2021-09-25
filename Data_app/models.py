@@ -67,3 +67,11 @@ class appsupdate(models.Model):
   msg = models.TextField(blank=True)
   updatelinkbutton = models.URLField(max_length=300)
 
+
+
+class feturedchannel(models.Model):
+    Date =  models.DateField(auto_now_add = True)
+    channelfetured = models.ManyToManyField('post_models')
+
+    def __str__(self):
+        return self.id 

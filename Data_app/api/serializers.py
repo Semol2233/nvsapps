@@ -142,7 +142,6 @@ class DRFPostSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class DRFPostSserializer(serializers.HyperlinkedModelSerializer):
-     catgory   = catgory_lisst(read_only=True)
      class Meta:
         model = post_models
         fields = [

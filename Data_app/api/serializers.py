@@ -137,3 +137,32 @@ class DRFPostSerializer(serializers.HyperlinkedModelSerializer):
           'straming_url',
           'channel_logo'
         ]
+
+
+
+
+class DRFPostSserializer(serializers.HyperlinkedModelSerializer):
+     catgory   = catgory_lisst(read_only=True)
+     class Meta:
+        model = post_models
+        fields = [
+          'channel_name',
+          'channel_slug',
+          'straming_url',
+          'channel_logo'
+        ]
+
+
+
+
+
+
+class feturedchnnael(serializers.HyperlinkedModelSerializer):
+     channelfetured   = DRFPostSserializer(read_only=True)
+     class Meta:
+        model = feturedchannel
+        fields = [
+            'chadnnel_name',
+            'channelfetured',
+          
+        ]

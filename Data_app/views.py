@@ -218,3 +218,10 @@ class homepagedata(generics.ListAPIView):
     pagination_class       = channels_Data
 
 
+class feturedapi(generics.ListAPIView):
+    queryset = feturedchannel.objects.all()
+    serializer_class       = feturedchnnael
+
+
+
+

@@ -20,7 +20,9 @@ urlpatterns = [
     path('up', appsupdatmodel.as_view(),name='update'),
 
     path('home', playerpagedata.as_view(),name='ch'),
-    path('dtls', homepagedata.as_view(),name='ch')
+    path('dtls', homepagedata.as_view(),name='ch'),
+    path('fet', feturedapi.as_view(),name='fet'),
+
 
 
 
